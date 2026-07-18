@@ -20,13 +20,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // Create uploads folder static serving path
 if (process.env.NODE_ENV !== "production") {
-  const uploadsPath = path.join(__dirname, "uploads");
-
-  if (!fs.existsSync(uploadsPath)) {
-    fs.mkdirSync(uploadsPath, { recursive: true });
-  }
-
-  app.use("/uploads", express.static(uploadsPath));
+  // Static uploads (only for local development)
+if (process.env.NODE_ENV !== "production") {
+  app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+}
 }
 
 // API Routes
