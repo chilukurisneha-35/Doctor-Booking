@@ -19,11 +19,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Create uploads folder static serving path
-const uploadsPath = path.join(__dirname, 'uploads');
-if (!fs.existsSync(uploadsPath)) {
-  fs.mkdirSync(uploadsPath, { recursive: true });
+if (process.env.NODE_ENV !== "production") {
+  const uploadsPath = path.join(__dirname, "uploads");
+
+  if (!fs.existsSync(uploadsPath)) {
+    fs.mkdirSync(uploadsPath, { recursive: true });
+  }
+
+  app.use("/uploads", express.static(uploadsPath));
 }
-app.use('/uploads', express.static(uploadsPath));
 
 // API Routes
 app.use('/api/auth', require('./routes/auth'));
