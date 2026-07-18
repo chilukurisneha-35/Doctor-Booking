@@ -7,8 +7,9 @@ Developed as a modern full-stack web application using the **MERN (MongoDB, Expr
 ---
 
 ## 👥 Project Team
-* **Shanmukha Venkata Vardhan Thatavarthy** (Team Lead)
-* **Yemineni Kavya** (Member)
+* **Sneha** (Team Lead)
+* **Jyothika** (Member)
+* **Sai Bharathi** (Member)
 
 ---
 
