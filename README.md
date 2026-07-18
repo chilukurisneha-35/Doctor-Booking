@@ -29,7 +29,7 @@ Detailed documentation corresponding to each phase of the project lifecycle is i
 
 Also included: the [MERN stack write-up](./documentation/Full%20Stack%20Development%20With%20MERN%20document.pdf).
 
-Demo videos (frontend, backend, and full walkthrough) are too large to host in this repo — they're available here: https://drive.google.com/drive/folders/1MLTuhBKXx4XQcoT5XnJbsmydUAb3fFJ3?usp=sharing
+Demo videos (frontend, backend, and full walkthrough) are too large to host in this repo — they're available here: https://drive.google.com/drive/folders/1KxlsYQmmm5d_wuzpOwjSxJbCscS7J1of?usp=sharing
 
 ---
 
