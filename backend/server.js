@@ -14,16 +14,14 @@ connectDB();
 const app = express();
 
 // Middleware
+// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Create uploads folder static serving path
-if (process.env.NODE_ENV !== "production") {
-  // Static uploads (only for local development)
+// Serve uploads only in local development
 if (process.env.NODE_ENV !== "production") {
   app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-}
 }
 
 // API Routes
@@ -31,7 +29,6 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/patients', require('./routes/patients'));
 app.use('/api/doctors', require('./routes/doctors'));
 app.use('/api/admins', require('./routes/admins'));
-
 // Basic health check route
 app.get('/health', (req, res) => {
   res.json({ success: true, message: 'Book a Doctor API is active and healthy.' });
