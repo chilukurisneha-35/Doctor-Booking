@@ -2,8 +2,8 @@ import React, { createContext, useState, useEffect, useContext } from "react";
 
 const AuthContext = createContext();
 
-// Your Backend URL
-const API_URL = "https://doctor-booking-sigma.vercel.app/api";
+// Same-domain API for Vercel
+const API_URL = "/api";
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -90,9 +90,10 @@ export const AuthProvider = ({ children }) => {
         message: data.message,
       };
     } catch (error) {
+      console.error(error);
       return {
         success: false,
-        message: error.message,
+        message: "Network Error",
       };
     }
   };
@@ -129,9 +130,10 @@ export const AuthProvider = ({ children }) => {
         message: data.message,
       };
     } catch (error) {
+      console.error(error);
       return {
         success: false,
-        message: error.message,
+        message: "Network Error",
       };
     }
   };
